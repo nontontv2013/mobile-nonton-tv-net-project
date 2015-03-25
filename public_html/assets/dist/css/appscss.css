@@ -53,15 +53,46 @@ body {
     transition: all 1s ease-in-out;
 }
 
+.curtain-bg{
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    /*background: url('../../../image/background-image.jpg') no-repeat;*/
+    background: url('https://cdn.rawgit.com/nontontv2013/mobile-nonton-tv-net-project/master/public_html/image/background-image.jpg') no-repeat;
+    background-size: 250%;
+     -webkit-animation-name: example;
+    -webkit-animation-duration: 80s;
+    animation-name: example;
+    animation-duration: 80s;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes example {
+    0%   {background-position: 0 0}
+    100% {background-position: 100% 0}
+}
+
+/* Standard syntax */
+@keyframes example {
+    0%   {background-position: 0 0}
+    100% {background-position: 100% 0}
+}
+
 .curtain-hide{
     height: 0;
 }
 
 .curtain-hd{
     position: relative;
-    margin-top: 400px;
+    margin-top: 100px;
     text-align: center;
     width: 100%;
+    float: left;
 }
 
 .curtain-hd h1{
@@ -69,7 +100,22 @@ body {
     color: #fff;
     font-family: 'Futura',sans-serif;
     font-weight: 500;
-    text-transform: uppercase;   
+    text-transform: uppercase; 
+    margin-top: 120px;
+    margin-bottom: 50px;
+}
+
+.curtain-hd .curtain-logo{
+    height: 60px;
+    width: 135px;
+    background: url('https://cdn.rawgit.com/nontontv2013/mobile-nonton-tv-net-project/master/public_html/image/imagespngcopy.png') no-repeat;
+    /*background: url('../../../image/imagespngcopy.png') no-repeat;*/
+    background-position: 0px 9px;
+    background-size: 400px;
+    position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
 }
 
 .curtain-ft{
@@ -162,6 +208,11 @@ body {
     margin: 5px;
     float: left;
     overflow: hidden;
+    cursor: pointer;
+}
+
+.channel-list-box.active{
+    border-color: #337ab7;
 }
 
 .channel-list-box > .channel-icon {
@@ -188,7 +239,7 @@ body {
     overflow: hidden;
 }
 
-.player {
+.player_area{
     width: 100%;
     height: 250px;
     float: left;
@@ -198,13 +249,71 @@ body {
     text-align: center;
 }
 
-.player > div {
+.player {
+    width: 100%;
+    height: 100%;
+    float: left;
+    position: relative;
+    background: black;
+    text-align: center;
+}
+
+@media (min-width: 992px){
+    .player{
+        width: 728px;
+        position: absolute;
+        margin: 0 auto;
+        right: 0;
+        left: 0
+    }
+    .player_area{
+        height: 404px;
+    }
+}
+
+.player > .player-ns {
     position: absolute;
+    margin: auto;
+    right: 0;
+    left: 0;
     top: 0;
+    bottom: 0;
+    font-size: 1em;
+    color: #fff;
+    font-family: 'Futura',sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    background: url('https://cdn.rawgit.com/nontontv2013/mobile-nonton-tv-net-project/master/public_html/image/background-image.jpg') no-repeat;
+    /*background: url('../../../image/background-image.jpg') no-repeat;*/
+    background-size: 170%;
+    background-position: center;
+    background-position-x: 52%;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    filter: blur(0px);
+}
+
+@media (min-width: 992px){
+    .player > .player-ns {
+        background-size: contain;
+        background-position-x: center;
+    }
+}
+
+.player > p {
+    position: absolute;
+    margin: auto;
+    top: 60%;
     bottom: 0;
     left: 0;
     right: 0;
-    margin: auto;
+    height: 10%;
+    color: #fff;
+    font-family: 'Futura',sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
 }
 
 /* VIDEO HTML5 PLUGIN */

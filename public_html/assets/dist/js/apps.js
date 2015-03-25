@@ -4,8 +4,8 @@
  */
 
 $(document).ready(function(){
-    var fs = "http://192.168.1.124/mobilestreamingtv/public_html/";
-    var fs = "https://cdn.rawgit.com/nontontv2013/mobile-nonton-tv-net-project/master/public_html/";
+    //var fs = "http://192.168.1.124/mobilestreamingtv/public_html/";
+    var fs = "https://cdn.rawgit.com/nontontv2013/mobile-nonton-tv-net-project/20150325/public_html/";
     
     function VIDEOJS(id,file,title){
         /*if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
@@ -97,7 +97,7 @@ $(document).ready(function(){
                         {   
                             "id"   : "globaltv",
                             "name" : "Global TV",        
-                            "url"  : "",
+                            "url"  : "http://edge-id.wow.mivo.tv/mivotvjkt/globaltv2/chunklist_w1695701488.m3u8",
                             "logo" : "image/Logo_Global_TV_2012.png",
                             "desc" : "Global TV adalah salah satu stasiun televisi swasta nasional di Indonesia yang mengudara secara terestrial dari Jakarta. Berawal dari sebuah stasiun televisi swasta lokal di Jakarta, Global TV belakangan meluaskan siaran ke 5 kota besar lainnya. Global TV memiliki hak siar atas liga balap paling bergengsi di dunia, Formula 1 setelah sebelumnya hak siar Formula 1 dikuasai MNCTV, dan kejuaraan dunia balap antar negara, A1. Kedua ajang ini disiarkan Global TV sendirian. Global TV juga memiliki hak siar dalam ajang sepak bola Euro 2008, bersama RCTI dan MNCTV. Direktur Utama Global TV saat ini adalah David Fernando Audy yang menggantikan Daniel Tatang Hartono. Global TV juga pernah menayangkan Piala Dunia 2010 dan untuk tahun ini, Global TV dan MNCTV menayangkan Liga Utama Inggris. Pada tahun 2011, Global TV juga memiliki hak siar dalam ajang sepak bola Liga Prima Indonesia, bersama RCTI dan MNCTV."
                         },
@@ -402,8 +402,11 @@ $(document).ready(function(){
     function CLICKNCLITEM(ct,i,id,file,title){
         $.ajax({
             success: function(){
-                $('.cnl-item-'+ct+'-'+i).click(function(){
+                $('.cnl-item-'+ct+'-'+i)
+                .click(function(){
                     VIDEOJS(id,file,title);
+                    $('.channel-list-box').removeClass('active');
+                    $(this).addClass('active');
                 });
             }
         });
