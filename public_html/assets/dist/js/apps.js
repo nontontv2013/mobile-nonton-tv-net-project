@@ -5,7 +5,7 @@
 
 $(document).ready(function(){
     //var fs = "http://192.168.1.124/mobilestreamingtv/public_html/";
-    var fs = "https://cdn.rawgit.com/nontontv2013/mobile-nonton-tv-net-project/20150325/public_html/";
+    var fs = "https://cdn.rawgit.com/nontontv2013/mobile-nonton-tv-net-project/20150325a/public_html/";
     
     function VIDEOJS(id,file,title){
         /*if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ){
